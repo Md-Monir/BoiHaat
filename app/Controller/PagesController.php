@@ -8,7 +8,9 @@ class PagesController extends AppController {
 
     public function home() {
         $this->loadModel('Book', 'Comment');
+        $this->Book->recursive = 2; 
         $books = $this->Book->find('all');
+        echo '<pre>',print_r($books),'</pre>';
 //        $comments = $this->Comment->find('all');
         $this->set(compact('comments', 'books'));
     }
