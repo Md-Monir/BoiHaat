@@ -26,6 +26,10 @@
         echo $this->Html->script('bootstrap-notify');
         echo $this->Html->script('light-bootstrap-dashboard');
         ?>
+
+        <?php
+        echo $this->fetch('css');
+        ?>
     </head>
 
     <body>

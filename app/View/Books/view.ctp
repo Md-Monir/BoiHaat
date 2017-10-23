@@ -10,6 +10,7 @@
                     Boi Haat
                 </a>
             </div>
+
             <ul class="nav">
                 <li>
                     <a href="/boiHat">
@@ -18,7 +19,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="/boiHat/users/view">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>
@@ -41,6 +42,13 @@
                         <p>Notifications</p>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php $this->Html->link("Logout", array('controller' => 'users', 'action' => 'logout')); ?>">
+                        <i class="pe-7s-switch"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>
@@ -55,14 +63,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand">Book detail</a>
+                    <a class="navbar-brand">View Book</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">
-                                <p>Log out</p>
-                            </a>
+                            <?php echo $this->Html->link("Logout", array('controller' => 'users', 'action' => 'logout')); ?>
                         </li>
                         <li class="separator hidden-lg hidden-md"></li>
                     </ul>

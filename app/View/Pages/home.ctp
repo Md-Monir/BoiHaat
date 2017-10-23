@@ -14,12 +14,12 @@
             <ul class="nav">
                 <li class="active">
                     <a href="/boiHat">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-home"></i>
                         <p>Home Page</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/boiHat/users/view/1">
+                    <a href="/boiHat/users/view">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>
@@ -40,6 +40,12 @@
                     <a href="notifications.html">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/boiHat/logout" >
+                        <i class="pe-7s-switch"></i>
+                        <p>Logout</p>
                     </a>
                 </li>
 
@@ -77,6 +83,7 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="content">
+                                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
                                     <legend><?php echo h($book['User']['username']); ?> <?php echo ('has uploaded'); ?></legend>
                                     <div class="row">
                                         <div class="col-md-4">
@@ -91,25 +98,35 @@
                                     </div>
                                     <hr>
 
+                                    
                                     <div class="card my-10">
                                         <div class="card-body">
                                             <?php echo $this->Form->create('Comment'); ?>
                                             <fieldset>
-                                                <?php echo $this->Form->input('comment'); ?>
+                                                <?php echo $this->Form->input('remark'); ?>
                                             </fieldset>
                                             <?php echo $this->Form->end(('Submit')); ?>
                                         </div>
                                     </div>
+                                    
 
                                     <div class="media mb-10">
-                                        <?php foreach ($comments as $comment): ?>
+                                        <?php foreach ($comments as $com): ?>
                                             <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
                                             <div class="media-body">
                                                 <h5 class="mt-0">Commenter Name</h5>
-                                                <?php echo $comment['Comment']['comment']; ?>
+                                                <?php echo h($com['Comment']['remark']); ?>
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="content">
+                                    <h3>For ADD only</h3>
+                                    <img class="img-thumbnail" src="img/sidebar-3.jpg" alt="..."/>
                                 </div>
                             </div>
                         </div>

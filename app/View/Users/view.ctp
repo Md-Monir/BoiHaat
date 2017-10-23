@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="/boiHat/users/view/1">
+                    <a href="/boiHat/users/view">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>
@@ -42,6 +42,12 @@
                         <p>Notifications</p>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php $this->Html->link("Logout", array('controller' => 'users', 'action' => 'logout')); ?>">
+                        <i class="pe-7s-switch"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
 
             </ul>
         </div>
@@ -57,7 +63,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand">Profile</a>
+                    <a class="navbar-brand">View Profile</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">

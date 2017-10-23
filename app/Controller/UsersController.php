@@ -38,20 +38,35 @@ class UsersController extends AppController {
         $this->set('users', $this->Paginator->paginate());
     }
 
-    public function view($id = null) {
-        if (!$this->User->exists($id)) {
+    public function view() {
+        $uid = $this->Auth->user('id');
+        if (!$this->User->exists($uid)) {
             throw new NotFoundException(('Invalid user'));
         }
-        $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+        $options = array('conditions' => array('User.' . $this->User->primaryKey => $uid));
         $this->set('user', $this->User->find('first', $options));
     }
 
     public function add() {
         if ($this->request->is('post')) {
             $this->User->create();
+            $data = $this->request->data;
+
+            if (!empty($this->request->data['User']['pro_pic']['name'])) {
+                $file = $this->request->data['User']['pro_pic'];
+
+                $ext = substr(strtolower(strrchr($file['name'], '.')), 1);
+                $arr_ext = array('jpg', 'jpeg', 'gif');
+                if (in_array($ext, $arr_ext)) {
+                    move_uploaded_file($file['tmp_name'], WWW_ROOT . '../img/uploads/' . $file['name']);
+                    $data = $this->request->data;
+                    $imageData = $data['User']['pro_pic'];
+                    $data['User']['pro_pic'] = $imageData['name'];
+                }
+            }
             if ($this->User->save($this->request->data)) {
                 $this->Flash->success(('The user has been saved.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect(array('controller' => 'pages','action' => 'home'));
             } else {
                 $this->Flash->error(('The user could not be saved. Please, try again.'));
             }
