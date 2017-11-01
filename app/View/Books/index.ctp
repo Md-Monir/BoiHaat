@@ -78,11 +78,11 @@
 
         <div class="content">
             <div class="container-fluid">
-                <?php foreach ($books as $book): ?>
+                <?php foreach (array_reverse($books) as $book): ?>
                     <div class="col-md-4">
                         <div class="card">
                             <div class="image">
-                                <?php echo $this->Html->image('uploads/' . $book['Book']['avatar']); ?>
+                                <?php echo $this->Html->image('books/' . $book['Book']['avatar']); ?>
                             </div>
                             <h4><?php echo h($book['Book']['bookname']); ?></h4>
                             <h5><?php echo h($book['Book']['author']); ?></h5>

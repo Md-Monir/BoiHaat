@@ -68,7 +68,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <?php echo $this->Html->link("Logout", array('controller' => 'users', 'action' => 'logout')); ?>
+                            <?php // echo $this->Html->link("Logout", array('controller' => 'users', 'action' => 'logout')); ?>
                         </li>
                         <li class="separator hidden-lg hidden-md"></li>
                     </ul>
@@ -82,14 +82,14 @@
                     <?php foreach ($books as $book): ?>
                         <div class="col-md-8">
                             <div class="card">
-                                <div class="content">
-                                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                                <div class="content">                                    
+                                    <?php echo $this->Html->image('books/' . $book['Book']['avatar'], array('width' => '5%')); ?>
                                     <legend><?php echo h($book['User']['username']); ?> <?php echo ('has uploaded'); ?></legend>
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <?php echo $this->Html->image('uploads/' . $book['Book']['avatar']); ?>
+                                        <div class="col-md-5">
+                                            <?php echo $this->Html->image('books/' . $book['Book']['avatar'], array('width' => '100%')); ?>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-7">
                                             <h4 class="text-left"><?php echo h($book['Book']['bookname']); ?></h4>
                                             <h5 class="text-left"><?php echo h($book['Book']['author']); ?></h5>
                                             <h5 class="text-left">Summary:- </h5>
@@ -98,7 +98,6 @@
                                     </div>
                                     <hr>
 
-                                    
                                     <div class="card my-10">
                                         <div class="card-body">
                                             <?php echo $this->Form->create('Comment'); ?>
@@ -108,13 +107,13 @@
                                             <?php echo $this->Form->end(('Submit')); ?>
                                         </div>
                                     </div>
-                                    
+
 
                                     <div class="media mb-10">
                                         <?php foreach ($comments as $com): ?>
                                             <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
                                             <div class="media-body">
-                                                <h5 class="mt-0">Commenter Name</h5>
+                                                <h5 class="mt-0"><?php echo h($com['User']['username']); ?></h5>
                                                 <?php echo h($com['Comment']['remark']); ?>
                                             </div>
                                         <?php endforeach; ?>
@@ -123,12 +122,13 @@
                             </div>
                         </div>
                         <div class="col-md-4">
+                            <?php foreach ($adds as $add): ?>
                             <div class="card">
                                 <div class="content">
-                                    <h3>For ADD only</h3>
-                                    <img class="img-thumbnail" src="img/sidebar-3.jpg" alt="..."/>
+                                    <?php echo $this->Html->image('adds/' . $add['Add']['addimg'], array('width' => '100%')); ?>
                                 </div>
                             </div>
+                            <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>

@@ -10,9 +10,9 @@
                             <legend><?php echo ('Add User'); ?></legend>
                             <?php
                             echo $this->Form->input('pro_pic', array(
-                                        'type' => 'file',
-                                        'label' => 'Please Upload a user profile picture'
-                                    ));
+                                'type' => 'file',
+                                'label' => 'Please Upload a user profile picture'
+                            ));
                             echo $this->Form->input('fullname');
                             echo $this->Form->input('address');
                             echo $this->Form->input('dob');
@@ -21,7 +21,12 @@
                             echo $this->Form->input('password');
                             ?>
                         </fieldset>
-                        <?php echo $this->Form->end(('Submit')); ?>
+                        <div class="actions">
+                            <ul>
+                                <li><?php echo $this->Form->end(('Submit')); ?></li>
+                                <li><?php echo $this->Html->link('back to login', array('controller' => 'users', 'action' => 'login')); ?></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -29,7 +34,7 @@
                     <div class="card">
                         <div class="content">
                             <h3>For ADD only</h3>
-                            <img class="img-thumbnail" src="img\sidebar-3.jpg" alt="..."/>
+                            <img class="img-thumbnail" src="../img/sidebar-3.jpg" alt="text"/>
                         </div>
                     </div>
                 </div>

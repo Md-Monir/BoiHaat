@@ -4,11 +4,11 @@ App::uses('AppController', 'Controller');
 
 class BooksController extends AppController {
 
-    public $components = array('Paginator', 'Flash');
+    public $components = array('Flash');
 
     public function index() {
         $this->Book->recursive = 0;
-        $this->set('books', $this->Paginator->paginate());
+        $this->set('books', $this->Book->find('all'));
     }
 
     public function view($id = null) {
@@ -30,7 +30,7 @@ class BooksController extends AppController {
                 $ext = substr(strtolower(strrchr($file['name'], '.')), 1);
                 $arr_ext = array('jpg', 'jpeg', 'gif');
                 if (in_array($ext, $arr_ext)) {
-                    move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/uploads/' . $file['name']);
+                    move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/books/' . $file['name']);
                     $data = $this->request->data;
                     $imageData = $data['Book']['avatar'];
                     $data['Book']['avatar'] = $imageData['name'];

@@ -98,11 +98,6 @@ class User extends AppModel {
         )
     );
 
-    /**
-     * Before isUniqueUsername
-     * @param array $options
-     * @return boolean
-     */
     function isUniqueUsername($check) {
 
         $username = $this->find(
@@ -128,11 +123,6 @@ class User extends AppModel {
         }
     }
 
-    /**
-     * Before isUniqueEmail
-     * @param array $options
-     * @return boolean
-     */
     function isUniqueEmail($check) {
 
         $email = $this->find(

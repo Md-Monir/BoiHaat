@@ -82,48 +82,36 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="content">
-                                <dl>
-                                    <dt><?php echo __('Fullname'); ?></dt>
-                                    <dd>
-                                        <?php echo h($user['User']['fullname']); ?>
-                                        &nbsp;
-                                    </dd>
-                                    <dt><?php echo __('Address'); ?></dt>
-                                    <dd>
-                                        <?php echo h($user['User']['address']); ?>
-                                        &nbsp;
-                                    </dd>
-                                    <dt><?php echo __('Dob'); ?></dt>
-                                    <dd>
-                                        <?php echo h($user['User']['dob']); ?>
-                                        &nbsp;
-                                    </dd>
-                                    <dt><?php echo __('Username'); ?></dt>
-                                    <dd>
-                                        <?php echo h($user['User']['username']); ?>
-                                        &nbsp;
-                                    </dd>
-                                    <dt><?php echo __('Email'); ?></dt>
-                                    <dd>
-                                        <?php echo h($user['User']['email']); ?>
-                                        &nbsp;
-                                    </dd>
-                                    <dt><?php echo __('Password'); ?></dt>
-                                    <dd>
-                                        <?php echo h($user['User']['password']); ?>
-                                        &nbsp;
-                                    </dd>
-                                    <dt><?php echo __('Created'); ?></dt>
-                                    <dd>
-                                        <?php echo h($user['User']['created']); ?>
-                                        &nbsp;
-                                    </dd>
-                                    <dt><?php echo __('Modified'); ?></dt>
-                                    <dd>
-                                        <?php echo h($user['User']['modified']); ?>
-                                        &nbsp;
-                                    </dd>
-                                </dl>
+                                <div class="sidebyside">
+                                    <h3>
+                                        <?php echo h('Fullname - '), ($user['User']['fullname']), '.'; ?>
+                                    </h3>
+                                    <br>
+
+                                    <h3>
+                                        <?php echo h('Address - '), ($user['User']['address']), '.'; ?>
+                                    </h3>
+                                    <br>
+
+                                    <h3>
+                                        <?php echo h('Date of Birth - '), ($user['User']['dob']), '.'; ?>
+                                    </h3>
+                                    <br>
+
+                                    <h3>
+                                        <?php echo h('Username - '), ($user['User']['username']), '.'; ?>
+                                    </h3>
+                                    <br>
+
+                                    <h3>
+                                        <?php echo h('Email - '), ($user['User']['email']), '.'; ?>
+                                    </h3>
+                                    <br>
+
+                                    <h3>
+                                        <?php echo h('Account created - '), ($user['User']['created']), '.'; ?>
+                                    </h3>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -134,12 +122,11 @@
                             </div>
                             <div class="content">
                                 <div class="author">
-                                    <img class="avatar border-gray" src="http://www.worthwild.com/assets/img-mas-02-b8b21065df45885c91cf32d318f8ad69.jpg" alt="..."/>
+                                    <img class="avatar border-gray" src="../img/users/face-1.jpg" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

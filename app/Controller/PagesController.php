@@ -4,11 +4,10 @@ App::uses('AppController', 'Controller');
 
 class PagesController extends AppController {
 
-    public $components = array('Paginator', 'Flash');
+    public $components = array('Flash');
+    var $uses = array('Book', 'Comment', 'Add');
 
     public function home() {
-        $this->loadModel('Book');
-        $this->set('books', $this->Book->find('all'));
 
         if ($this->request->is('post')) {
             $this->Comment->create();
@@ -20,11 +19,9 @@ class PagesController extends AppController {
             }
         }
 
-        $this->loadModel('Comment');
+        $this->set('adds', $this->Add->find('all'));
+        $this->set('books', $this->Book->find('all'));
         $this->set('comments', $this->Comment->find('all'));
-
-//        $this->Book->recursive = 2;
-//        echo '<pre>', print_r($comments), '</pre>';
     }
 
 }

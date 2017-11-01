@@ -18,18 +18,6 @@
         echo $this->Html->css('cake.generic');
         ?>
 
-        <?php
-        echo $this->Html->script('jquery-1.10.2');
-        echo $this->Html->script('bootstrap.min');
-        echo $this->Html->script('bootstrap-checkbox-radio-switch');
-        echo $this->Html->script('chartist.min');
-        echo $this->Html->script('bootstrap-notify');
-        echo $this->Html->script('light-bootstrap-dashboard');
-        ?>
-
-        <?php
-        echo $this->fetch('css');
-        ?>
     </head>
 
     <body>
@@ -38,5 +26,14 @@
                 <?php echo $this->fetch('content'); ?>
             </div>
         </div>
+        
+        <?php
+        echo $this->Html->script('jquery-1.10.2');
+        echo $this->Html->script('bootstrap.min');
+        echo $this->Html->script('bootstrap-checkbox-radio-switch');
+        echo $this->Html->script('chartist.min');
+        echo $this->Html->script('bootstrap-notify');
+        echo $this->Html->script('light-bootstrap-dashboard');
+        ?>
     </body>
 </html>

@@ -12,6 +12,7 @@ class UsersController extends AppController {
     }
 
     public function login() {
+        $this->layout="loginLayout";
         //if already logged-in, redirect
         if ($this->Session->check('Auth.User')) {
             $this->redirect(array('action' => 'index'));
@@ -20,10 +21,10 @@ class UsersController extends AppController {
         // if we get the post information, try to authenticate
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                $this->Session->setFlash(('Welcome, ' . $this->Auth->user('username')));
+//                $this->Session->setFlash(('Welcome, ' . $this->Auth->user('username')));
                 return $this->redirect($this->Auth->redirectUrl());
             } else {
-                $this->Session->setFlash(('Invalid username or password'));
+//                $this->Session->setFlash(('Invalid username or password'));
             }
         }
     }
